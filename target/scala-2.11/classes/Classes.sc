@@ -20,9 +20,10 @@ object WithConstructor {
 }
 
 var matchable = WithConstructor()
+
 matchable match {
-  case Int => println("this should not work")
   case WithConstructor(_, 4) => println("WOAHHH!")
+  case WithConstructor("default",_) => println("The default I guess")
   case WithConstructor(item, count) => println(item + " " + count)
 }
 
